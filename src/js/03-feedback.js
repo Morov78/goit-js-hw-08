@@ -1,14 +1,14 @@
 import throttle from 'lodash.throttle';
 const formEl = document.querySelector('form');
 
-checkLocalStorageValue();
+checkLocalStorageFormValue();
 formEl.addEventListener(
   'input',
   throttle(onInputForm, 500, { leading: false })
 );
 formEl.addEventListener('submit', onSubmitForm);
 
-function checkLocalStorageValue() {
+function checkLocalStorageFormValue() {
   const formValue = JSON.parse(localStorage.getItem('feedback-form-state'));
   if (formValue === null) {
     return;
